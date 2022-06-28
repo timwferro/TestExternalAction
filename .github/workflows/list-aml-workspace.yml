@@ -1,0 +1,31 @@
+# This is a workflow for AML Workspaces
+name: List AML Workspaces
+# Controls when the workflow will run
+on: 
+  workflow_call:
+    inputs:
+      resourceGroup:
+        description: 'Resource Group'     
+        required: true
+        type: string
+      workspace:
+        description: 'Workspace Name'     
+        required: true
+        type: string
+    secrets:
+      creds:
+        required: true
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  # This workflow contains a single job called "ListWorkspaces"
+  ListWorkspaces:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Az CLI login'
+        uses: azure/login@v1
+        with:
+          creds: ${{secrets.creds}}
+          enable-AzPSSession: true 
