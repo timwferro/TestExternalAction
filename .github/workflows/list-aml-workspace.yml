@@ -29,3 +29,9 @@ jobs:
         with:
           creds: ${{secrets.creds}}
           enable-AzPSSession: true 
+      - name: install-extension
+        run:  az extension add -n ml -y
+      - name: update-extension
+        run: az extension update -n ml
+      - name: list-models
+        run:  az ml model list --resource-group ${{inputs.resourceGroup}} --workspace-name ${{inputs.workspace}}
