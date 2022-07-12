@@ -1,0 +1,25 @@
+{
+  "name": "mlops-templates-GHA-dev",
+  "version": "1.0.0",
+  "description": "> This repo has been populated by an initial template to help get you started. Please > make sure to update the content to build a great experience for community-building.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djdean/mlops-templates-GHA-dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djdean/mlops-templates-GHA-dev/issues"
+  },
+  "homepage": "https://github.com/djdean/mlops-templates-GHA-dev#readme",
+  "dependencies": {
+    "@actions/core": "^1.9.0",
+    "@actions/github": "^5.0.3",
+    "js-yaml": "^4.1.0"
+  }
+}
