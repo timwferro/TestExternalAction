@@ -6,6 +6,13 @@ on:
       file_name:
         required: true
         type: string
+    outputs:
+      resource_group:
+        description: "The resource group to use"
+        value: ${{ jobs.read-yaml.outputs.resource_group }}
+      aml_workspace:
+        description: "The aml_workspace to use"
+        value: ${{ jobs.read-yaml.outputs.aml_workspace }}
 jobs:
     read-yaml:
       runs-on: ubuntu-latest
