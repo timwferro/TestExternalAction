@@ -1,0 +1,21 @@
+name: read-yaml
+
+on: 
+  workflow_call:
+    inputs:
+      file_name:
+        required: true
+        type: string
+jobs:
+    call-test:
+      runs-on: ubuntu-latest
+      steps:
+          - name: Checking out repo
+            uses: actions/checkout@v2
+          - name: Read test
+            uses: ./ # Uses an action in the root directory
+            id: read_action_js
+            with:
+              config: ${{ github.workspace }}/files/${{ inputs.file_name }}
+          - name: Echo step output
+            run: echo "${{  steps.read_action_js.outputs.resource_group }}"
