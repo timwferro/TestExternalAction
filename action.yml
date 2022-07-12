@@ -1,13 +1,15 @@
-name: 'JSON Read Test'
-description: 'Test JSON Read'
+name: 'YAML Read Action'
+description: 'A custom Javascript action to read YAML configuration files'
 inputs:
-  config:
+  file_name:
     description: 'Config file name'
     required: true
     default: ''
 outputs:
-  test:
-    description: 'The example param'
+  resource_group:
+    description: 'The resource group the AML workspace is in'
+  aml_workspace:
+    description: 'The resource group the AML workspace is in'
 runs:
   using: 'node16'
   main: 'index.js'
