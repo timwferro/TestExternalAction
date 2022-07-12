@@ -19,6 +19,6 @@ jobs:
             uses: ./ # Uses an action in the root directory
             id: read_action_js
             with:
-              file_name: ${{ github.workspace }}/files/${{ inputs.file_name }}
+              config: ${{ github.workspace }}/files/${{ inputs.file_name }}
           - name: Echo step output
             run: echo "${{  steps.read_action_js.outputs.resource_group }} ${{  steps.read_action_js.outputs.aml_workspace }}"
