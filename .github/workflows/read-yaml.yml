@@ -10,8 +10,8 @@ jobs:
     read-yaml:
       runs-on: ubuntu-latest
       outputs:
-        resource_group: ${{  steps.config-data.outputs.resource_group }}
-        aml_workspace: ${{  steps.config-data.outputs.aml_workspace }}
+        resource_group: ${{  steps.read_action_js.outputs.resource_group }}
+        aml_workspace: ${{  steps.read_action_js.outputs.aml_workspace }}
       steps:
           - name: Checking out repo
             uses: actions/checkout@v2
