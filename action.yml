@@ -1,7 +1,7 @@
 name: 'YAML Read Action'
 description: 'A custom Javascript action to read YAML configuration files'
 inputs:
-  file_name:
+  config:
     description: 'Config file name'
     required: true
     default: ''
