@@ -7,7 +7,7 @@ on:
         required: true
         type: string
 jobs:
-    call-test:
+    read-yaml:
       runs-on: ubuntu-latest
       outputs:
         resource_group: ${{  steps.config-data.outputs.resource_group }}
