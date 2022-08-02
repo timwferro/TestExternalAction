@@ -10,7 +10,7 @@ try {
       return;
     }
     console.log(data);
-    const configYaml = yaml.load(data, 'FAILSAFE_SCHEMA');
+    const configYaml = yaml.load(data, 'asdf');
     const namespace = String(configYaml["variables"]["namespace"])
     const postfix = String(configYaml["variables"]["postfix"])
     const environment = String(configYaml["variables"]["environment"])
