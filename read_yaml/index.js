@@ -12,8 +12,8 @@ try {
     console.log(data);
     const configYaml = yaml.load(data, 'utf8');
     const namespace = String(configYaml["variables"]["namespace"])
-    const postfix = String(configYaml["variables"]["namespace"])
-    const environment = String(configYaml["variables"]["namespace"])
+    const postfix = String(configYaml["variables"]["postfix"])
+    const environment = String(configYaml["variables"]["environment"])
     const resource_group = "rg-"+namespace+"-"+postfix+environment
     const aml_workspace = "mlw-"+namespace+"-"+postfix+environment
     core.setOutput("resource_group",resource_group);
