@@ -11,8 +11,11 @@ try {
     }
     console.log(data);
     const configYaml = yaml.load(data, 'utf8');
-    const resource_group = "rg-"+configYaml["variables"]["namespace"]+"-"+configYaml["variables"]["postfix"]+configYaml["variables"]["environment"]
-    const aml_workspace = "mlw-"+configYaml["variables"]["namespace"]+"-"+configYaml["variables"]["postfix"]+configYaml["variables"]["environment"]
+    const namespace = String(configYaml["variables"]["namespace"])
+    const postfix = String(configYaml["variables"]["namespace"])
+    const environment = String(configYaml["variables"]["namespace"])
+    const resource_group = "rg-"+namespace+"-"+postfix+environment
+    const aml_workspace = "mlw-"+namespace+"-"+postfix+environment
     core.setOutput("resource_group",resource_group);
     core.setOutput("aml_workspace", aml_workspace);
   });
