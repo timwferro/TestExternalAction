@@ -11,8 +11,10 @@ try {
     }
     console.log(data);
     const configYaml = yaml.load(data, 'utf8');
-    core.setOutput("resource_group", configYaml["variables"]["resource_group"]);
-    core.setOutput("aml_workspace", configYaml["variables"]["aml_workspace"]);
+    const resource_group = "rg-"+configYaml["variables"]["namespace"]+"-"+configYaml["variables"]["postfix"]+configYaml["variables"]["environment"]
+    const aml_workspace = "mlw-"+configYaml["variables"]["namespace"]+"-"+configYaml["variables"]["postfix"]+configYaml["variables"]["environment"]
+    core.setOutput("resource_group",resource_group);
+    core.setOutput("aml_workspace", aml_workspace);
   });
   
 } catch (error) {
